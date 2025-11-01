@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
-import pagelogo from "../assets/pagelogo.png";
+import pagelogo from "../assets/pageLogo.png";
 import logo2 from "../assets/logo2.png";
 
 const LandingPage: React.FC = () => {
