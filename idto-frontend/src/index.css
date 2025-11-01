@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+html,
+body {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+  will-change: background-color, color;
+}
+
+* {
+  transition-property: background-color, color, border-color, fill, stroke;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+}
+
+@keyframes fade-in-slow {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-slow {
+  animation: fade-in-slow 0.8s ease-in-out both;
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
+
+:root {
+  /* Base colors (Light theme) */
+  --bg-color: #ffffff;
+  --text-color: #131b31;
+  --text-secondary: #616675;
+  --border-color: #e7e8ea;
+  --accent-bg: #e6e8ff;
+  --accent-text: #0019ff;
+  --muted-text: #9ca3af;
+  --section-gradient-from: #f5f5f5;
+  --section-gradient-to: #ffffff;
+}
+
+[data-theme="dark"] {
+  /* Base colors (Dark theme) */
+  --bg-color: #0f162b;
+  --text-color: #f7f7f8;
+  --text-secondary: #a6a9b9;
+  --border-color: #2a2e43;
+  --accent-bg: #1c1f3a;
+  --accent-text: #8a95ff;
+  --muted-text: #b2b5c6;
+  --section-gradient-from: #101010;
+  --section-gradient-to: #1b2237;
+}
+
+img,
+svg {
+  shape-rendering: optimizeSpeed;
+  image-rendering: auto;
+  backface-visibility: hidden;
+}
